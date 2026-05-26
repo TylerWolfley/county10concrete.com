@@ -298,8 +298,8 @@ body.nav-open .nav-toggle-bars::after{transform:translateY(-6px) rotate(-45deg)}
 }
 @media (min-width:900px){
   .hero{
-    padding-top:28px;
-    padding-bottom:60px;
+    padding-top:20px;
+    padding-bottom:36px;
   }
 }
 .hero .container{max-width:var(--container-hero)}
@@ -318,35 +318,36 @@ body.nav-open .nav-toggle-bars::after{transform:translateY(-6px) rotate(-45deg)}
 .hero-proof-bar{grid-area:cred}
 @media (min-width:960px){
   .hero-grid{
-    column-gap:56px;
-    row-gap:34px;
-    grid-template-columns:.9fr 1.1fr;
+    column-gap:48px;
+    row-gap:18px;
+    grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
     grid-template-areas:
       "copy media"
       "cred cred";
-    align-items:center;
+    align-items:start;
   }
+  .hero-media{padding-top:18px}
 }
 .hero-eyebrow{
   margin:0 0 10px;
   color:var(--primary-dark);
 }
 .hero-copy h1{
-  font-size:clamp(2.2rem,1.05rem + 4vw,4.15rem);
-  line-height:1.02;
-  margin:0 0 14px;
-  max-width:9.8em;
+  font-size:clamp(2.15rem,1.2rem + 2.35vw,3.25rem);
+  line-height:1.04;
+  margin:0 0 12px;
+  max-width:11.5em;
 }
 .hero-lede{
-  margin:0 0 12px;
-  max-width:54ch;
+  margin:0 0 10px;
+  max-width:58ch;
   color:#14242b;
-  font-size:clamp(1.08rem,.98rem + .38vw,1.3rem);
+  font-size:clamp(1.04rem,.98rem + .24vw,1.18rem);
   font-weight:760;
-  line-height:1.45;
+  line-height:1.42;
 }
 .hero-copy .sub{
-  margin:0 0 16px;
+  margin:0 0 14px;
   max-width:60ch;
 }
 .hero-copy .micro{margin:6px 0 0}
@@ -357,7 +358,7 @@ body.nav-open .nav-toggle-bars::after{transform:translateY(-6px) rotate(-45deg)}
   display:grid;
   gap:10px;
   grid-template-columns:1fr;
-  margin:18px 0 2px;
+  margin:14px 0 0;
   max-width:640px;
 }
 .hero-facts div{
@@ -457,7 +458,7 @@ body.nav-open .nav-toggle-bars::after{transform:translateY(-6px) rotate(-45deg)}
   .proof-main img{height:360px}
 }
 @media (min-width:960px){
-  .proof-main img{height:410px}
+  .proof-main img{height:330px}
 }
 .proof-block figcaption{
   padding:7px 13px;
@@ -483,6 +484,9 @@ body.nav-open .nav-toggle-bars::after{transform:translateY(-6px) rotate(-45deg)}
 }
 @media (min-width:640px){
   .proof-pair img{height:170px}
+}
+@media (min-width:960px){
+  .proof-pair img{height:126px}
 }
 .proof-pair figcaption{
   background:#eef3ef;
