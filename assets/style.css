@@ -601,6 +601,60 @@ body.nav-open .nav-toggle-bars::after{transform:translateY(-6px) rotate(-45deg)}
   gap:12px;
   margin-top:16px;
 }
+.proof-stack-grid{
+  display:grid;
+  gap:10px;
+  grid-template-columns:1fr;
+  margin-top:18px;
+}
+.proof-layer{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  gap:14px;
+  align-items:start;
+  padding:16px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,.12);
+  border-left:5px solid #55a9bb;
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px),
+    linear-gradient(90deg,#101820 0%,#122d37 65%,#173f4d 100%);
+  background-size:42px 100%,100% 100%;
+  color:#fff;
+  box-shadow:0 12px 28px rgba(16,24,32,.11);
+}
+.proof-layer span{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:34px;
+  height:34px;
+  border-radius:6px;
+  background:rgba(255,255,255,.12);
+  color:#d4eef4;
+  font-size:.78rem;
+  font-weight:950;
+  line-height:1;
+}
+.proof-layer h3{
+  margin:0 0 5px;
+  color:#fff;
+  font-size:1rem;
+  line-height:1.2;
+}
+.proof-layer p{
+  margin:0;
+  color:rgba(255,255,255,.78);
+  font-size:.93rem;
+  line-height:1.45;
+}
+.proof-layer a{
+  color:#fff;
+  font-weight:800;
+}
+@media (min-width:760px){
+  .proof-stack-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
 
 .cards{
   display:grid;
