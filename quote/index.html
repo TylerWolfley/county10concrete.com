@@ -8,7 +8,7 @@
   <meta name="application-name" content="County 10 Concrete">
   <link rel="canonical" href="https://county10concrete.com/quote/">
   <meta property="og:title" content="Get a Concrete Quote | County 10 Concrete">
-  <meta property="og:description" content="Send concrete project details, photos, measurements, access notes, and address for a free estimate from County 10 Concrete.">
+  <meta property="og:description" content="Send concrete project details, measurements, address, and timing for a free estimate from County 10 Concrete. Text photos separately for a faster first look.">
   <meta property="og:url" content="https://county10concrete.com/quote/">
   <meta property="og:site_name" content="County 10 Concrete">
   <meta property="og:locale" content="en_US">
@@ -64,11 +64,11 @@
         <div>
           <p class="eyebrow">Quote Request</p>
           <h1>Request a Concrete Estimate</h1>
-          <p class="sub">The fastest first look includes project type, city and address, rough size, tear-out needs, desired finish, timeline, and photos of the work area.</p>
+          <p class="sub">The fastest first look includes project type, city and address, rough size, tear-out needs, desired finish, and timeline. Text photos separately for a faster review.</p>
           <div class="trust-pills" aria-label="Quote facts">
             <span class="trust-pill trust-pill-check">Free estimates</span>
             <span class="trust-pill trust-pill-check">Licensed &amp; insured</span>
-            <span class="trust-pill trust-pill-check">Upload or text photos</span>
+            <span class="trust-pill trust-pill-check">Text photos separately</span>
           </div>
           <div class="cta-row">
             <a class="btn btn-primary" href="sms:+13073494694?body=Hi%20County%2010%20Concrete%2C%20I%20need%20a%20concrete%20quote.%20My%20address%20is%20____.%20I%20attached%20photos.">Text Project Photos</a>
@@ -85,7 +85,7 @@
 
     <section class="section surface-section">
       <div class="container quote-grid">
-        <form id="smartQuoteForm" class="form-card smart-quote-form" action="https://formspree.io/f/mzdwkvrq" method="POST" enctype="multipart/form-data" accept-charset="UTF-8" data-track-label="quote_request_form">
+        <form id="smartQuoteForm" class="form-card smart-quote-form" action="https://formspree.io/f/mzdwkvrq" method="POST" accept-charset="UTF-8" data-track-label="quote_request_form">
           <input type="hidden" name="_subject" value="County 10 Concrete quote request">
           <input type="hidden" name="_redirect" value="https://county10concrete.com/thanks/">
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
@@ -95,7 +95,7 @@
             <div>
               <p class="eyebrow">Estimate Intake</p>
               <h2 class="assistant-heading">Concrete Quote Request</h2>
-              <p class="assistant-sub">Fill in what you know. If something is uncertain, choose “Not sure” and send photos so we can review the next step.</p>
+              <p class="assistant-sub">Fill in what you know. If something is uncertain, choose "Not sure" and text photos after submitting.</p>
             </div>
             <p class="required-note">Required fields are marked with <span>*</span></p>
           </div>
@@ -151,7 +151,7 @@
               <div class="field">
                 <label class="label" for="q-size">Approximate size <span class="required-star">*</span></label>
                 <input id="q-size" class="ctrl" name="approximate_size" required placeholder="Example: 20 x 30 driveway, 12 x 16 patio, not sure">
-                <span class="help">Rough length and width are enough to start. “Not sure” is okay.</span>
+                <span class="help">Rough length and width are enough to start. "Not sure" is okay.</span>
               </div>
             </div>
 
@@ -185,64 +185,26 @@
           </div>
 
           <div class="form-section">
-            <h3><span>3</span> Tear-Out, Prep &amp; Access</h3>
-            <div class="grid2">
-              <div class="field">
-                <label class="label" for="q-tearout">Tear-out needed? <span class="required-star">*</span></label>
-                <select id="q-tearout" class="ctrl" name="tear_out_needed" required>
-                  <option>Not sure</option>
-                  <option>Yes, old concrete needs removed</option>
-                  <option>Maybe, needs review</option>
-                  <option>No, new pour area</option>
-                  <option>No, area is already prepped</option>
-                </select>
-              </div>
-              <div class="field">
-                <label class="label" for="q-existing">What is there now?</label>
-                <select id="q-existing" class="ctrl" name="existing_surface">
-                  <option>Not sure</option>
-                  <option>Old concrete</option>
-                  <option>Grass / dirt</option>
-                  <option>Gravel</option>
-                  <option>Asphalt</option>
-                  <option>New build / prepared area</option>
-                </select>
-              </div>
-            </div>
-
+            <h3><span>3</span> Tear-Out</h3>
             <div class="field">
-              <label class="label" for="q-access">Access notes <span class="required-star">*</span></label>
-              <textarea id="q-access" class="ctrl" name="access_notes" placeholder="Gate, slope, tight driveway, alley, truck access, existing landscaping, low wires, rural driveway, or write 'easy access'." required></textarea>
-            </div>
-
-            <div class="field">
-              <label class="label" for="q-demo">Tear-out / prep notes <span class="required-star">*</span></label>
-              <textarea id="q-demo" class="ctrl" name="tear_out_prep_notes" placeholder="Is old concrete being removed? Any base prep, drainage issue, cracking, settling, or tie-in we need to see?" required></textarea>
+              <label class="label" for="q-tearout">Tear-out needed? <span class="required-star">*</span></label>
+              <select id="q-tearout" class="ctrl" name="tear_out_needed" required>
+                <option>Not sure</option>
+                <option>Yes, old concrete needs removed</option>
+                <option>Maybe, needs review</option>
+                <option>No, new pour area</option>
+                <option>No, area is already prepped</option>
+              </select>
             </div>
           </div>
 
           <div class="form-section">
-            <h3><span>4</span> Photos &amp; Send</h3>
-            <div class="field">
-              <label class="label" for="q-photos">Photos <span class="help">(optional, up to 5)</span></label>
-              <label class="drop" id="drop" for="q-photos">
-                <input id="q-photos" name="photos" type="file" accept="image/*" multiple style="display:none">
-                <div><strong>Upload photos here</strong></div>
-                <div class="help">Best photos: full work area, close cracks or tie-ins, access route, drainage, and anything being removed.</div>
-              </label>
-              <div id="fileList" class="file-list" aria-live="polite"></div>
-            </div>
-
+            <h3><span>4</span> Photos</h3>
             <div class="quote-route">
-              <strong>Prefer texting photos?</strong>
-              <span>Text photos with the address and rough size instead of uploading them here.</span>
+              <strong>Text photos after submitting.</strong>
+              <span>After sending this form, text 1-3 photos with the project address and rough size for the fastest first look.</span>
               <a class="micro-cta" href="sms:+13073494694?body=Hi%20County%2010%20Concrete%2C%20I%20need%20a%20concrete%20quote.%20My%20address%20is%20____.%20I%20attached%20photos.">Text photos to 307-349-4694</a>
             </div>
-
-            <label class="check-field" for="q-ready">
-              <input id="q-ready" name="ready_confirmation" type="checkbox" value="Ready to review" required>
-              <span><strong>I included the details I know.</strong><span class="help">County 10 Concrete may still need photos, measurements, or an on-site look before final pricing.</span></span>
-            </label>
           </div>
 
           <input type="hidden" name="utm_source" id="utm_source">
@@ -268,9 +230,8 @@
             <div class="preview-row"><strong>Tear-out</strong><span data-preview-tearout>Not sure</span></div>
             <div class="preview-row"><strong>Finish</strong><span data-preview-finish>Not sure yet</span></div>
             <div class="preview-row"><strong>Timing</strong><span data-preview-timing>Flexible</span></div>
-            <div class="preview-row"><strong>Photos</strong><span data-preview-photos>None yet</span></div>
           </div>
-          <div class="cta-row"><a class="btn" href="sms:+13073494694?body=Hi%20County%2010%20Concrete%2C%20I%20need%20a%20concrete%20quote.%20My%20address%20is%20____.%20I%20attached%20photos.">Text Photos Instead</a></div>
+          <div class="cta-row"><a class="btn" href="sms:+13073494694?body=Hi%20County%2010%20Concrete%2C%20I%20need%20a%20concrete%20quote.%20My%20address%20is%20____.%20I%20attached%20photos.">Text Photos After Form</a></div>
 
           <div class="quote-checklist" aria-label="Quote request checklist">
             <h3>Fastest Quote Checklist</h3>
@@ -281,7 +242,7 @@
               <li>Tear-out needed?</li>
               <li>Desired finish</li>
               <li>Timeline</li>
-              <li>Photos uploaded or texted</li>
+              <li>Photos texted separately if available</li>
             </ul>
           </div>
         </aside>

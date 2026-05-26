@@ -85,26 +85,6 @@
     nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
   }
 
-  function initFiles() {
-    const input = document.getElementById("q-photos");
-    const list = document.getElementById("fileList");
-    if (!input || !list) return;
-
-    input.addEventListener("change", () => {
-      const files = Array.from(input.files || []).slice(0, 5);
-      if ((input.files || []).length > 5 && window.DataTransfer) {
-        const limited = new DataTransfer();
-        files.forEach((file) => limited.items.add(file));
-        input.files = limited.files;
-      }
-      if (!files.length) {
-        list.textContent = "";
-        return;
-      }
-      list.textContent = `${files.length} photo${files.length === 1 ? "" : "s"} selected: ${files.map((file) => file.name).join(", ")}`;
-    });
-  }
-
   function textValue(form, selector, fallback = "Not provided") {
     const el = form.querySelector(selector);
     if (!el) return fallback;
@@ -124,8 +104,7 @@
       size: document.querySelector("[data-preview-size]"),
       tearout: document.querySelector("[data-preview-tearout]"),
       finish: document.querySelector("[data-preview-finish]"),
-      timing: document.querySelector("[data-preview-timing]"),
-      photos: document.querySelector("[data-preview-photos]")
+      timing: document.querySelector("[data-preview-timing]")
     };
 
     function update() {
@@ -136,7 +115,6 @@
       const tearout = textValue(form, "#q-tearout", "Not sure");
       const finish = textValue(form, "#q-finish", "Not sure yet");
       const timing = textValue(form, "#q-timing", "Flexible");
-      const photos = form.querySelector("#q-photos")?.files?.length || 0;
 
       if (preview.service) preview.service.textContent = service;
       if (preview.city) preview.city.textContent = city;
@@ -145,7 +123,6 @@
       if (preview.tearout) preview.tearout.textContent = tearout;
       if (preview.finish) preview.finish.textContent = finish;
       if (preview.timing) preview.timing.textContent = timing;
-      if (preview.photos) preview.photos.textContent = photos ? `${photos} attached` : "None yet";
 
       if (!summary) return;
       const lines = [
@@ -160,10 +137,8 @@
         `Project size: ${size}`,
         `Tear-out needed: ${tearout}`,
         `Finish type: ${finish}`,
-        `Existing surface: ${textValue(form, "#q-existing")}`,
         `Timing: ${timing}`,
-        `Access notes: ${textValue(form, "#q-access")}`,
-        `Tear-out / prep notes: ${textValue(form, "#q-demo")}`,
+        "Photos: text separately to 307-349-4694 if available",
         "",
         "Project details:",
         textValue(form, "#q-details")
@@ -205,7 +180,6 @@
     preserveUTMLinks();
     fillUTMInputs();
     initMobileNav();
-    initFiles();
     initQuoteSummary();
     initForms();
   }
