@@ -1,0 +1,1 @@
+County 10 Concrete production logo assets. Primary files: county-10-concrete-logo.svg and county-10-concrete-logo-transparent-4096.png. SVG letters are outlined paths. PNG files have transparent backgrounds. Main display type is Russo One (OFL); secondary type is Rajdhani Bold (OFL).
