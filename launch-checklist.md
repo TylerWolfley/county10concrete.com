@@ -11,7 +11,7 @@
 ## Soon After Launch
 
 - Create and verify the Google Business Profile.
-- Replace stock service-example photos with real County 10 Concrete job photos.
+- Add approved County 10 Concrete job photos as projects are completed.
 - Add verified review links once public profiles are live.
 - Add analytics or call tracking if wanted.
 - Test a real quote form submission after the Formspree endpoint is connected.

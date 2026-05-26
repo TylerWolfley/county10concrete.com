@@ -1,4 +1,4 @@
-Temporary stock service images from Pexels.
+Service image source notes.
 
 License reference: https://www.pexels.com/license/
 
@@ -9,4 +9,4 @@ License reference: https://www.pexels.com/license/
 - service-repair.jpg: https://images.pexels.com/photos/29102198/pexels-photo-29102198.jpeg
 - service-commercial.jpg: https://images.pexels.com/photos/11580364/pexels-photo-11580364.jpeg
 
-These are placeholders for layout and mood only. Replace with real County 10 Concrete project photos when available.
+Use these source notes for attribution checks and future image swaps.
