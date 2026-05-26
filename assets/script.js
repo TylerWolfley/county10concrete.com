@@ -138,8 +138,6 @@
         `Tear-out needed: ${tearout}`,
         `Finish type: ${finish}`,
         `Timing: ${timing}`,
-        "Photos: text separately to 307-349-4694 if available",
-        "",
         "Project details:",
         textValue(form, "#q-details")
       ];
