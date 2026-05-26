@@ -92,11 +92,16 @@
 
     input.addEventListener("change", () => {
       const files = Array.from(input.files || []).slice(0, 5);
+      if ((input.files || []).length > 5 && window.DataTransfer) {
+        const limited = new DataTransfer();
+        files.forEach((file) => limited.items.add(file));
+        input.files = limited.files;
+      }
       if (!files.length) {
         list.textContent = "";
         return;
       }
-      list.textContent = files.map((file) => file.name).join(", ");
+      list.textContent = `${files.length} photo${files.length === 1 ? "" : "s"} selected: ${files.map((file) => file.name).join(", ")}`;
     });
   }
 
@@ -116,6 +121,9 @@
       service: document.querySelector("[data-preview-service]"),
       city: document.querySelector("[data-preview-city]"),
       address: document.querySelector("[data-preview-address]"),
+      size: document.querySelector("[data-preview-size]"),
+      tearout: document.querySelector("[data-preview-tearout]"),
+      finish: document.querySelector("[data-preview-finish]"),
       timing: document.querySelector("[data-preview-timing]"),
       photos: document.querySelector("[data-preview-photos]")
     };
@@ -124,12 +132,18 @@
       const service = textValue(form, "#q-service", "Choose a service");
       const city = textValue(form, "#q-city", "City not set");
       const address = textValue(form, "#q-address", "Address not set");
+      const size = textValue(form, "#q-size", "Size not set");
+      const tearout = textValue(form, "#q-tearout", "Not sure");
+      const finish = textValue(form, "#q-finish", "Not sure yet");
       const timing = textValue(form, "#q-timing", "Flexible");
       const photos = form.querySelector("#q-photos")?.files?.length || 0;
 
       if (preview.service) preview.service.textContent = service;
       if (preview.city) preview.city.textContent = city;
       if (preview.address) preview.address.textContent = address;
+      if (preview.size) preview.size.textContent = size;
+      if (preview.tearout) preview.tearout.textContent = tearout;
+      if (preview.finish) preview.finish.textContent = finish;
       if (preview.timing) preview.timing.textContent = timing;
       if (preview.photos) preview.photos.textContent = photos ? `${photos} attached` : "None yet";
 
@@ -143,9 +157,9 @@
         `City / town: ${city}`,
         `Project address: ${address}`,
         `Service type: ${service}`,
-        `Customer type: ${textValue(form, "#q-customer")}`,
-        `Project size: ${textValue(form, "#q-size")}`,
-        `Finish type: ${textValue(form, "#q-finish")}`,
+        `Project size: ${size}`,
+        `Tear-out needed: ${tearout}`,
+        `Finish type: ${finish}`,
         `Existing surface: ${textValue(form, "#q-existing")}`,
         `Timing: ${timing}`,
         `Access notes: ${textValue(form, "#q-access")}`,
@@ -168,7 +182,10 @@
         const action = form.getAttribute("action") || "";
         if (action.includes("YOUR_FORMSPREE_ID")) {
           event.preventDefault();
-          alert("Formspree endpoint is not set yet. Replace YOUR_FORMSPREE_ID with the County 10 Concrete form ID.");
+          const summary = form.querySelector("#q-summary-field")?.value || "County 10 Concrete quote request";
+          const subject = encodeURIComponent("County 10 Concrete quote request");
+          const body = encodeURIComponent(`${summary}\n\nPhotos do not attach automatically from this fallback email. Please attach them here or text them to 307-349-4694.`);
+          window.location.href = `mailto:county10concrete@gmail.com?subject=${subject}&body=${body}`;
           return;
         }
 

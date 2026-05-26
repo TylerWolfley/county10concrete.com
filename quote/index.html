@@ -63,15 +63,15 @@
       <div class="container split-grid">
         <div>
           <p class="eyebrow">Quote Request</p>
-          <h1>Get a Concrete Quote</h1>
-          <p class="sub">Use the form below to email County 10 Concrete the project details. Photos, measurements, address, access, old concrete, finish type, and timing help the fastest, most accurate first look.</p>
+          <h1>Request a Concrete Estimate</h1>
+          <p class="sub">The fastest first look includes project type, city and address, rough size, tear-out needs, desired finish, timeline, and photos of the work area.</p>
           <div class="trust-pills" aria-label="Quote facts">
             <span class="trust-pill trust-pill-check">Free estimates</span>
             <span class="trust-pill trust-pill-check">Licensed &amp; insured</span>
-            <span class="trust-pill trust-pill-check">Photos help fastest</span>
+            <span class="trust-pill trust-pill-check">Upload or text photos</span>
           </div>
           <div class="cta-row">
-            <a class="btn btn-primary" href="sms:+13073494694?body=Hi%20County%2010%20Concrete%2C%20I%20need%20a%20concrete%20quote.%20My%20address%20is%20____.%20I%20attached%20photos.">Text Photos</a>
+            <a class="btn btn-primary" href="sms:+13073494694?body=Hi%20County%2010%20Concrete%2C%20I%20need%20a%20concrete%20quote.%20My%20address%20is%20____.%20I%20attached%20photos.">Text Project Photos</a>
             <a class="btn" href="tel:+13073494694">Call 307-349-4694</a>
           </div>
         </div>
@@ -91,18 +91,24 @@
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
           <textarea id="q-summary-field" name="message" hidden></textarea>
 
-          <h2 class="assistant-heading">Quote Request Form</h2>
-          <p class="assistant-sub">Fill in what you know. When you tap Send Quote Request, the form emails County 10 Concrete the details and any photos you include.</p>
+          <div class="quote-form-top">
+            <div>
+              <p class="eyebrow">Estimate Intake</p>
+              <h2 class="assistant-heading">Concrete Quote Request</h2>
+              <p class="assistant-sub">Fill in what you know. If something is uncertain, choose “Not sure” and send photos so we can review the next step.</p>
+            </div>
+            <p class="required-note">Required fields are marked with <span>*</span></p>
+          </div>
 
           <div class="form-section">
-            <h3>Contact</h3>
+            <h3><span>1</span> Contact &amp; Location</h3>
             <div class="grid2">
               <div class="field">
-                <label class="label" for="q-name">Full name</label>
+                <label class="label" for="q-name">Full name <span class="required-star">*</span></label>
                 <input id="q-name" class="ctrl" name="name" required autocomplete="name">
               </div>
               <div class="field">
-                <label class="label" for="q-phone">Phone</label>
+                <label class="label" for="q-phone">Phone <span class="required-star">*</span></label>
                 <input id="q-phone" class="ctrl" name="phone" required autocomplete="tel" inputmode="tel">
               </div>
             </div>
@@ -112,21 +118,22 @@
                 <input id="q-email" class="ctrl" name="email" type="email" autocomplete="email">
               </div>
               <div class="field">
-                <label class="label" for="q-city">City / town</label>
+                <label class="label" for="q-city">City / town <span class="required-star">*</span></label>
                 <input id="q-city" class="ctrl" name="city_town" required placeholder="Riverton, Lander, Casper, Mills, Shoshoni..." autocomplete="address-level2">
               </div>
             </div>
             <div class="field">
-              <label class="label" for="q-address">Project address or area</label>
-              <input id="q-address" class="ctrl" name="project_address" placeholder="Street address, road, neighborhood, or nearest town" autocomplete="street-address">
+              <label class="label" for="q-address">Project address or nearest road <span class="required-star">*</span></label>
+              <input id="q-address" class="ctrl" name="project_address" required placeholder="Street address, road, neighborhood, or nearest town" autocomplete="street-address">
+              <span class="help">The address helps confirm service area, access, drive time, and whether an on-site look is needed.</span>
             </div>
           </div>
 
           <div class="form-section">
-            <h3>Concrete Project</h3>
+            <h3><span>2</span> Project Scope</h3>
             <div class="grid2">
               <div class="field">
-                <label class="label" for="q-service">Service type</label>
+                <label class="label" for="q-service">Project type <span class="required-star">*</span></label>
                 <select id="q-service" class="ctrl" name="service_type" required>
                   <option value="">Choose one</option>
                   <option>Driveway / parking pad</option>
@@ -142,34 +149,16 @@
                 </select>
               </div>
               <div class="field">
-                <label class="label" for="q-customer">Customer type</label>
-                <select id="q-customer" class="ctrl" name="customer_type" required>
-                  <option value="">Choose one</option>
-                  <option>Homeowner</option>
-                  <option>Renter</option>
-                  <option>Landlord</option>
-                  <option>Property manager</option>
-                  <option>Real estate agent</option>
-                  <option>Contractor</option>
-                  <option>Business owner</option>
-                  <option>Other</option>
-                </select>
+                <label class="label" for="q-size">Approximate size <span class="required-star">*</span></label>
+                <input id="q-size" class="ctrl" name="approximate_size" required placeholder="Example: 20 x 30 driveway, 12 x 16 patio, not sure">
+                <span class="help">Rough length and width are enough to start. “Not sure” is okay.</span>
               </div>
-            </div>
-
-            <div class="field">
-              <label class="label" for="q-details">Project details</label>
-              <textarea id="q-details" class="ctrl" name="project_details" placeholder="What do you want poured, repaired, replaced, or removed? Include anything you already know about size, finish, drainage, and location." required></textarea>
             </div>
 
             <div class="grid2">
               <div class="field">
-                <label class="label" for="q-size">Approximate size</label>
-                <input id="q-size" class="ctrl" name="approximate_size" placeholder="Example: 20 x 30 driveway, 12 x 16 patio, not sure">
-              </div>
-              <div class="field">
-                <label class="label" for="q-finish">Finish type</label>
-                <select id="q-finish" class="ctrl" name="finish_type">
+                <label class="label" for="q-finish">Desired finish <span class="required-star">*</span></label>
+                <select id="q-finish" class="ctrl" name="finish_type" required>
                   <option>Not sure yet</option>
                   <option>Broom finish</option>
                   <option>Smooth / hard trowel</option>
@@ -177,17 +166,35 @@
                   <option>Match existing concrete</option>
                 </select>
               </div>
-            </div>
-
-            <div class="grid2">
               <div class="field">
-                <label class="label" for="q-timing">Timing</label>
+                <label class="label" for="q-timing">Timeline <span class="required-star">*</span></label>
                 <select id="q-timing" class="ctrl" name="timing" required>
                   <option>Flexible</option>
-                  <option>This month</option>
                   <option>Next 1-2 weeks</option>
+                  <option>This month</option>
                   <option>As soon as weather allows</option>
                   <option>Before a listing / move / project deadline</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label" for="q-details">Project details <span class="required-star">*</span></label>
+              <textarea id="q-details" class="ctrl" name="project_details" placeholder="What do you want poured, repaired, replaced, or removed? Include anything you already know about drainage, use, tie-ins, or problem areas." required></textarea>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3><span>3</span> Tear-Out, Prep &amp; Access</h3>
+            <div class="grid2">
+              <div class="field">
+                <label class="label" for="q-tearout">Tear-out needed? <span class="required-star">*</span></label>
+                <select id="q-tearout" class="ctrl" name="tear_out_needed" required>
+                  <option>Not sure</option>
+                  <option>Yes, old concrete needs removed</option>
+                  <option>Maybe, needs review</option>
+                  <option>No, new pour area</option>
+                  <option>No, area is already prepped</option>
                 </select>
               </div>
               <div class="field">
@@ -204,26 +211,32 @@
             </div>
 
             <div class="field">
-              <label class="label" for="q-access">Access notes</label>
+              <label class="label" for="q-access">Access notes <span class="required-star">*</span></label>
               <textarea id="q-access" class="ctrl" name="access_notes" placeholder="Gate, slope, tight driveway, alley, truck access, existing landscaping, low wires, rural driveway, or write 'easy access'." required></textarea>
             </div>
 
             <div class="field">
-              <label class="label" for="q-demo">Tear-out / prep notes</label>
+              <label class="label" for="q-demo">Tear-out / prep notes <span class="required-star">*</span></label>
               <textarea id="q-demo" class="ctrl" name="tear_out_prep_notes" placeholder="Is old concrete being removed? Any base prep, drainage issue, cracking, settling, or tie-in we need to see?" required></textarea>
             </div>
           </div>
 
           <div class="form-section">
-            <h3>Photos and Confirmation</h3>
+            <h3><span>4</span> Photos &amp; Send</h3>
             <div class="field">
               <label class="label" for="q-photos">Photos <span class="help">(optional, up to 5)</span></label>
               <label class="drop" id="drop" for="q-photos">
                 <input id="q-photos" name="photos" type="file" accept="image/*" multiple style="display:none">
-                <div><strong>Tap to upload photos</strong></div>
-                <div class="help">Clear photos help us quote accurately.</div>
+                <div><strong>Upload photos here</strong></div>
+                <div class="help">Best photos: full work area, close cracks or tie-ins, access route, drainage, and anything being removed.</div>
               </label>
               <div id="fileList" class="file-list" aria-live="polite"></div>
+            </div>
+
+            <div class="quote-route">
+              <strong>Prefer texting photos?</strong>
+              <span>Text photos with the address and rough size instead of uploading them here.</span>
+              <a class="micro-cta" href="sms:+13073494694?body=Hi%20County%2010%20Concrete%2C%20I%20need%20a%20concrete%20quote.%20My%20address%20is%20____.%20I%20attached%20photos.">Text photos to 307-349-4694</a>
             </div>
 
             <label class="check-field" for="q-ready">
@@ -251,10 +264,26 @@
             <div class="preview-row"><strong>Service</strong><span data-preview-service>Choose a service</span></div>
             <div class="preview-row"><strong>City</strong><span data-preview-city>City not set</span></div>
             <div class="preview-row"><strong>Address</strong><span data-preview-address>Address not set</span></div>
+            <div class="preview-row"><strong>Size</strong><span data-preview-size>Size not set</span></div>
+            <div class="preview-row"><strong>Tear-out</strong><span data-preview-tearout>Not sure</span></div>
+            <div class="preview-row"><strong>Finish</strong><span data-preview-finish>Not sure yet</span></div>
             <div class="preview-row"><strong>Timing</strong><span data-preview-timing>Flexible</span></div>
             <div class="preview-row"><strong>Photos</strong><span data-preview-photos>None yet</span></div>
           </div>
           <div class="cta-row"><a class="btn" href="sms:+13073494694?body=Hi%20County%2010%20Concrete%2C%20I%20need%20a%20concrete%20quote.%20My%20address%20is%20____.%20I%20attached%20photos.">Text Photos Instead</a></div>
+
+          <div class="quote-checklist" aria-label="Quote request checklist">
+            <h3>Fastest Quote Checklist</h3>
+            <ul>
+              <li>Project type</li>
+              <li>City and address</li>
+              <li>Approximate size</li>
+              <li>Tear-out needed?</li>
+              <li>Desired finish</li>
+              <li>Timeline</li>
+              <li>Photos uploaded or texted</li>
+            </ul>
+          </div>
         </aside>
       </div>
     </section>
