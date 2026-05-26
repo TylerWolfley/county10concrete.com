@@ -292,14 +292,25 @@ body.nav-open .nav-toggle-bars::after{transform:translateY(-6px) rotate(-45deg)}
 .hero .container{max-width:var(--container-hero)}
 .hero-grid{
   display:grid;
-  gap:30px;
+  gap:24px;
   grid-template-columns:1fr;
+  grid-template-areas:
+    "copy"
+    "cred"
+    "media";
 }
-.hero-copy,.hero-media{min-width:0}
+.hero-copy,.hero-media,.hero-proof-bar{min-width:0}
+.hero-copy{grid-area:copy}
+.hero-media{grid-area:media}
+.hero-proof-bar{grid-area:cred}
 @media (min-width:960px){
   .hero-grid{
+    column-gap:56px;
+    row-gap:34px;
     grid-template-columns:.9fr 1.1fr;
-    gap:56px;
+    grid-template-areas:
+      "copy media"
+      "cred cred";
     align-items:center;
   }
 }
@@ -478,21 +489,63 @@ body.nav-open .nav-toggle-bars::after{transform:translateY(-6px) rotate(-45deg)}
 }
 
 .proof-bar{
-  background:#fff;
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
+  background:linear-gradient(90deg,#101820 0%,#113b47 58%,#1f5f73 100%);
+  border-top:1px solid rgba(255,255,255,.14);
+  border-bottom:1px solid rgba(16,24,32,.4);
+  box-shadow:0 10px 26px rgba(16,24,32,.14);
+}
+.hero-proof-bar{
+  border-radius:10px;
+  overflow:hidden;
 }
 .proof-bar-inner{
   list-style:none;
   margin:0;
-  padding:10px 0;
+  padding:0;
+  display:grid;
+  grid-template-columns:1fr;
+  color:rgba(255,255,255,.9);
+  font-size:.82rem;
+  font-weight:900;
+  letter-spacing:.045em;
+  line-height:1.2;
+  text-transform:uppercase;
+}
+.proof-bar-inner li{
+  min-height:42px;
   display:flex;
-  flex-wrap:wrap;
+  align-items:center;
   justify-content:center;
-  gap:6px 18px;
-  color:#384347;
-  font-size:.9rem;
-  font-weight:800;
+  padding:11px 14px;
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+.proof-bar-inner li:first-child{border-top:0}
+@media (min-width:640px){
+  .proof-bar-inner{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .proof-bar-inner li{
+    border-top:0;
+    border-left:1px solid rgba(255,255,255,.14);
+  }
+  .proof-bar-inner li:nth-child(odd){border-left:0}
+  .proof-bar-inner li:last-child{
+    grid-column:1 / -1;
+    border-top:1px solid rgba(255,255,255,.12);
+  }
+}
+@media (min-width:1050px){
+  .proof-bar-inner{
+    grid-template-columns:repeat(5,minmax(0,1fr));
+  }
+  .proof-bar-inner li,
+  .proof-bar-inner li:last-child{
+    grid-column:auto;
+    border-top:0;
+    border-left:1px solid rgba(255,255,255,.14);
+  }
+  .proof-bar-inner li:first-child{border-left:0}
 }
 
 .trust-grid,.steps{
