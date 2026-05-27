@@ -1,5 +1,7 @@
 qa-screenshots/
 node_modules/
+.next/
+out/
 .env
 .env.*
 *.log
